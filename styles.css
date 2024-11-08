@@ -1,179 +1,574 @@
-/* Reset de márgenes y paddings */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+@font-face {
+    font-family: 'Oswald';
+    src: url('fonts/Oswald-VariableFont_wght.ttf');
 }
 
+@font-face {
+    font-family: 'Roboto';
+    src: url('fonts/Roboto-Bold.ttf');
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('fonts/Roboto-Regular.ttf');
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: 'Myriad Pro Cond';
+    src: url('fonts/myriad-pro-Cond.woff');
+}
+
+/* Estilos generales */
 body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    background-color: #B0B6B6; /* Gris Claro como fondo */
-    color: #333; /* Color de texto general */
+    max-width: 1920px;
+    margin: 0 auto;
 }
 
-/* Estilos del header */
-header {
-    background-color: #ffffff; /* Fondo blanco para el header */
-    color: #4A6159; /* Verde Grisáceo Oscuro para el texto */
-    padding: 20px;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Oswald';
+}
+
+
+#breadcrumbs {
+    padding: 25px;
+    margin-bottom: 0;
+}
+
+a {
+    text-decoration: none;
+    color: var(--institucional);
+    font-family: 'Roboto';
+}
+
+a:hover {
+    text-decoration: underline !important;
+}
+
+button.btn.btn-light.dropdown.rounded-end {
+    height: 38px;
+}
+
+html {
+    margin: 0 !important;
+}
+
+textarea {
+    resize: none !important;
+}
+
+a:focus {
+    border: 1px solid black;
+    outline: 1px solid white;
+    border-radius: 5px;
+}
+
+.anclaInferior>a {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.espaciadoTexto {
+    line-height: 1.5;
+    letter-spacing: 0.12em;
+    word-spacing: 0.16em;
+}
+
+.ancho-sitio {
+    max-width: 1920px;
+    width: 100%;
+    margin: auto;
+}
+
+.espaciadoTexto p {
+    margin-bottom: 2em;
+}
+
+#saltar a {
+    position: absolute;
+    left: -10000px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+
+
+#saltar a:focus {
+    position: static;
+    border: 3px solid black;
+    width: 50px;
+    height: 30px;
+}
+
+.menu-accesibilidad {
+    background-color: var(--institucional);
+    border-radius: 0 5px 5px 0;
+    position: fixed;
+    display: block;
+    top: 18%;
+    right: auto;
+    z-index: 1000;
+}
+
+.items-accesibilidad {
+    list-style: none;
+    padding: 5px;
+    margin: 0;
+}
+
+.items-accesibilidad li {
+    margin: 5px 0;
+}
+
+.items-accesibilidad a {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    border-radius: 5px;
+    background-color: white;
+    padding: 3px 0 0 0;
     text-align: center;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra para dar separación */
 }
 
-/* Logo y Texto del Header */
-.logo-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 15px; /* Espacio entre el logo y el texto */
+.cuerpo-contenido {
+    padding: 0 5px 5px 5px;
 }
 
-/* Tamaño grande para el logo */
-.logo {
-    height: 120px; /* Ajusta la altura para hacerlo más grande */
+.post-content p {
+    font-size: 1rem !important;
+}
+
+.post-content>div {
+    max-width: 90%;
+}
+
+.post-content>div.wp-block-buttons {
+    max-width: 100ch;
+}
+
+.post-content div>p {
+    max-width: 100ch;
+}
+
+.post-content>div.wp-block-image {
+    max-width: 100ch;
+    margin: 0 auto;
+}
+
+.post-content>.is-provider-youtube {
+    max-width: 100ch;
+    aspect-ratio: 16/9 !important;
+}
+
+.post-content h6,
+.post-content h5,
+.post-content h4,
+.post-content h3,
+.post-content h2 {
+    font-family: 'Oswald';
+    margin: 36px auto;
+    max-width: 900px;
+}
+
+.post-content :where(ol, ul) {
+    padding: 0 45px !important;
+    margin-bottom: 1em !important;
+}
+
+.wp-block-button__link,
+.wp-block-file__button {
+    padding: 10px 18px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    border-radius: 5px;
+    background-color: var(--institucional);
+    color: white;
+}
+
+.publicacion {
+    text-align: right;
+    font-size: 10pt;
+}
+
+.publicacion {
+    text-align: right;
+    padding: 15px;
+    color: #848484;
+}
+
+.paginacion a {
+    color: var(--blanco);
+    border: 1px solid var(--institucional);
+    border-radius: 5px;
+    margin: 0px 2px;
+    background-color: var(--institucional);
+    text-decoration: none;
     width: auto;
 }
 
-.header-text h1, .header-text p {
-    font-family: 'Roboto', sans-serif; /* Cambia la fuente a Roboto */
-    margin: 0;
-    text-align: left;
-    color: #4A6159; /* Color de texto para un buen contraste */
+.paginacion .current,
+.dots {
+    width: auto !important;
 }
 
-.header-text h1 {
-    font-size: 2.5rem; /* Tamaño más grande para el título */
-    font-weight: 700;
+.paginacion {
+    margin: 15px !important;
 }
 
-.header-text p {
-    font-size: 1.1rem;
-    font-weight: 400;
-    margin-top: 2px; /* Reduce la separación entre el título y el subtítulo */
+.paginacion a:hover {
+    background-color: #082847;
+    color: #fff;
+    transition: 1s;
 }
 
-/* Estilos de navegación */
-header nav ul {
-    list-style-type: none;
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    margin-top: 10px;
+div.dataTables_wrapper div.dataTables_paginate {
+    white-space: wrap;
 }
 
-header nav a {
-    color: #4A6159; /* Verde Grisáceo Oscuro para el texto */
-    text-decoration: none;
-    font-weight: 600;
+details.wp-block-details {
+    box-shadow: 1px 1px 5px 0px lightgray;
+    margin-bottom: 40px;
+}
+
+details.wp-block-details summary {
     padding: 10px;
-    transition: color 0.3s ease;
 }
 
-header nav a:hover {
-    color: #B0B6B6; /* Gris Claro al pasar el cursor */
+details.wp-block-details summary::marker {
+    color: var(--institucional);
+    font-size: 15pt;
 }
 
-/* Estilos del main */
-/* Estilos del main */
-main {
-    flex: 1;
-    padding: 20px;
-    max-width: 1200px;
-    margin: auto;
-    font-size: 1.1rem;
-    line-height: 1.8;
-    color: #4A6159; /* Verde Grisáceo Oscuro para el texto */
-}
-
-/* Estilos para los contenedores */
-.container_1 {
-    background-color: #718383; /* Fondo blanco para cada contenedor */
-    border: 1px solid #234f4e; /* Borde gris claro */
-    border-radius: 8px; /* Bordes redondeados */
-    padding: 20px; /* Espacio interno */
-    margin-bottom: 20px; /* Espacio entre contenedores */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra para dar separación */
-}
-.container_1 h2 {
-    font-size: 1.5rem; /* Tamaño del título */
-    color: #dee2e2; /* Color del título */
-    margin-bottom: 10px; /* Espacio debajo del título */
-}
-
-.container_1 p {
-    margin: 0; /* Elimina márgenes para el párrafo */
-    color: #dee2e2;
-}
-
-.container {
-    background-color: #ffffff; /* Fondo blanco para cada contenedor */
-    border: 1px solid #234f4e; /* Borde gris claro */
-    border-radius: 8px; /* Bordes redondeados */
-    padding: 20px; /* Espacio interno */
-    margin-bottom: 20px; /* Espacio entre contenedores */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra para dar separación */
-}
-
-.container h2 {
-    font-size: 1.5rem; /* Tamaño del título */
-    color: #234f4e; /* Color del título */
-    margin-bottom: 10px; /* Espacio debajo del título */
-}
-
-.container p {
-    margin: 0; /* Elimina márgenes para el párrafo */
-}
+/* Fin estilos generales */
 
 
-/* Estilos del footer */
-footer {
-    display: flex; /* Usa flexbox para el layout */
-    align-items: center; /* Alinea los elementos verticalmente */
-    justify-content: space-between; /* Espacio entre los elementos */
-    background-color: #fff; /* Verde Grisáceo Oscuro */
-    color: #4A6159;
-    padding: 15px;
-    position: relative;
-    bottom: 0;
+/* Estilos para banderas de traducciÃ³n automÃ¡tica */
+
+section.menu-institucional #flags li>a {
+    padding-right: 0;
+    padding-left: 0;
+}
+
+#flags {
+    padding-top: 8px;
+    width: auto !important;
+}
+
+#flags ul {
+    display: flex;
+}
+
+/* Termina estilos banderas de traducciÃ³n automÃ¡tica */
+
+/* Estilos para Smart Slider 3 */
+
+.n2-ss-slider .n2-ss-slide-background-image img {
+    object-fit: contain !important;
+}
+
+/* Fin estilos para Smart Slider 3 */
+
+/* MenÃº Institucional */
+
+.menu-institucional {
+    background-color: var(--institucional);
+    max-height: 74px;
+}
+
+.btnMenuLateral {
+    color: white;
+    align-items: center;
+}
+
+.btnMenuLateral:hover {
+    color: white;
+    text-decoration: underline;
+}
+
+.btn.btnMenuLateral:focus {
+    box-shadow: none;
+}
+
+.input-group.input-group-sm {
+    margin-bottom: 0;
+}
+
+/* Fin MenÃº Institucional */
+
+/* MenÃº Lateral Responsive */
+
+.offcanvas-header {
+    padding: 1rem 1rem 0;
+}
+
+.offcanvas-body {
+    padding: 0;
+}
+
+ul.menu_lateral {
+    list-style: none;
+    font-size: 14px;
+    padding: 0.5em 1em 0.5em 1em;
+}
+
+.menu_lateral {
+    text-decoration: none;
+}
+
+.menu_lateral a {
+    color: #212529;
+    font-size: 14px;
+}
+
+ul.menu_lateral>li.menu-responsive,
+.menu-responsive li {
+    border: 0;
+}
+
+ul.menu_lateral>li.accordion-body>a {
+    color: #212529;
+    padding: 0;
+}
+
+ul.menu_lateral li>a {
+    font-weight: bold;
+}
+
+ul.menu_lateral li ul li>a {
+    font-weight: normal;
+}
+
+.menu_lateral li.accordion-item.accordion-body:hover,
+ul.accordion-collapse li:hover {
+    background-color: #cfe2ff;
+}
+
+li.accordion-body {
+    padding: 1rem 1.25rem;
+    list-style: none;
+}
+
+.icon-container {
+    align-items: center;
+    height: inherit;
+    justify-content: space-between;
+    margin: 0 16px;
+    column-gap: 10px;
+}
+
+.icon-container img {
+    max-height: 90px;
+    object-fit: scale-down;
+}
+
+.icon-container a:hover {
+    transform: scale(1.1);
+}
+
+/* Fin MenÃº Lateral Responsive */
+
+/* Contenido entradas */
+
+.post-content>* {
+    max-width: 100ch;
+    font-family: "Roboto";
+    margin: 0 auto;
+}
+
+.post-content p {
+    margin-bottom: 1rem;
+}
+
+/*
+.post-content > figure.wp-block-table {
+    max-width: 100%;
+}*/
+
+.eventos-destacados img {
     width: 100%;
-    font-size: 0.9rem;
+    height: 200px;
 }
 
-footer a {
-    display: flex; /* Esto permite que el logo y el texto estén en una fila */
-    align-items: center; /* Alinea verticalmente el contenido */
-    margin-right: 15px; /* Espacio entre los logos */
+.imagen-post>a,
+.imagen-noticias>a {
+    display: inherit;
 }
 
-footer img.footer-logo {
-    height: 60px; /* Ajusta la altura de las imágenes según tus necesidades */
+:where(.table) th,
+td {
+    padding: 8px 10px;
 }
 
-footer p {
+.post-content table>thead {
+    background-color: var(--institucional);
+    color: var(--blanco);
+}
+
+td img {
+    max-width: 300px;
+}
+
+.post-content>.is-provider-youtube {
+    max-width: 100% !important;
+    height: 500px;
+}
+
+.is-provider-youtube>div,
+.wp-block-embed iframe {
+    height: 100%;
+    width: 100% !important;
+}
+
+.post-content iframe {
+    max-width: 100%;
+    width: 100%;
+    aspect-ratio: 16/9;
+}
+
+.post-title-new a:visited,
+.publicacion a:visited {
+    color: #609 !important;
+}
+
+.post-title-new a {
+    font-size: 16pt;
+    color: var(--institucional);
+    text-decoration: none;
     margin: 0;
-    flex-grow: 1; /* Esto asegura que el texto ocupe el espacio restante */
-    text-align: right; /* Alinea el texto a la derecha */
 }
 
+/*.wp-block-columns{
+    text-align: center;
+}*/
 
+.wp-block-column li {
+    text-align: initial;
+}
 
-/* Estilos Responsivos */
-@media (max-width: 768px) {
-    header nav ul {
-        flex-direction: column;
-        gap: 10px;
+.wp-block-column {
+    align-self: center;
+}
+
+/* .wp-block-column p{
+    text-align: left;
+} */
+
+.formulario2 {
+    text-align: center;
+    padding: 20px 0;
+    max-width: 90ch;
+    margin: 0 auto;
+}
+
+.formulario2 div {
+    padding-bottom: 10px;
+}
+
+.formulario2 .wpcf7-submit {
+    background: var(--institucional);
+    border: 0;
+    border-radius: 5px;
+    width: 27%;
+    padding: 10px;
+    color: white;
+}
+
+.formulario2 .wpcf7-submit:hover {
+    background-color: #082847;
+    transition: 1s;
+}
+
+/* Fin Contenido entradas */
+
+/* Inicio 404 */
+
+.error404_img {
+    width: auto;
+    height: 300px;
+}
+
+/* Fin 404 */
+
+/* Recaptcha */
+.grecaptcha-badge {
+    visibility: hidden;
+}
+
+/* Fin Recaptcha */
+
+/* Comienza iconos redes sociales */
+.social-icon-blue img:hover {
+    animation: tada;
+    animation-duration: 0.5s;
+}
+
+.social-icon-blue {
+    animation-duration: 0.5s;
+    animation-iteration-count: infinite;
+}
+/* Estilo para resaltar correo electronico ventanilla unica  pie de pagina */
+.correo-documentos {
+    background: #003D6C;
+    padding: 5px;
+    color: white
+}
+
+@keyframes tada {
+    0% {
+        transform: scale3d(1, 1, 1);
     }
 
-    .logo-container {
-        flex-direction: column;
+    10%,
+    20% {
+        transform: scale3d(.9, .9, .9) rotate3d(0, 0, 1, -3deg);
     }
 
-    main {
-        padding: 15px;
-        font-size: 1rem;
+    30%,
+    50%,
+    70%,
+    90% {
+        transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg);
+    }
+
+    40%,
+    60%,
+    80% {
+        transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg);
+    }
+
+    100% {
+        transform: scale3d(1, 1, 1);
+    }
+}
+
+.tada {
+    animation-name: tada;
+}
+
+/* Termina iconos redes sociales */
+
+@media (min-width: 768px) {
+    .post-content>.wp-block-file {
+        max-width: 900px;
+    }
+}
+
+@media (min-width: 992px) {
+    .post-content>figure.wp-block-table {
+        max-width: 90%;
+    }
+}
+
+@media (min-width: 1400px) {
+    .post-content>figure.wp-block-table {
+        max-width: 80%;
     }
 }
